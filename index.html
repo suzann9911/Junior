@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(8px);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6f91;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff4e7a;
+    }
+    .hidden {
+      display: none;
+      margin-top: 20px;
+    }
+    .photo {
+      width: 200px;
+      height: auto;
+      margin-top: 15px;
+      border-radius: 15px;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    #countdown {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .timeline, .quiz, .letter, .gallery, .video-message, .extras {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 800px;
+      text-align: left;
+    }
+    .timeline h2, .quiz h2, .letter h2, .video-message h2, .extras h2 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .timeline ul, .extras ul {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline li, .extras li {
+      margin-bottom: 10px;
+    }
+    .quiz-question {
+      margin-bottom: 15px;
+    }
+    .quiz-question label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .letter-content {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+    }
+
+    /* Starry Night Animation */
+    .starry-night {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: white;
+      border-radius: 50%;
+      animation: star-twinkle 2s infinite alternate;
+    }
+    @keyframes star-twinkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* Blow the Candle Animation */
+    .candle {
+      width: 50px;
+      height: 100px;
+      background-color: #ffcc00;
+      position: relative;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .flame {
+      width: 20px;
+      height: 30px;
+      background-color: #ff6600;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      margin-left: -10px;
+      animation: flicker 1s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+    .wish-message {
+      display: none;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="your-favorite-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Starry Night Animation -->
+  <div class="starry-night"></div>
+
+  <div class="container">
+    <h1>Happy Birthday, My Love! 🎂💐</h1>
+    <p class="subtitle">October 7th, 2025</p>
+    <div id="countdown"></div>
+    <button onclick="showSurprise()">Click for a Surprise 🎁</button>
+    <div id="surprise" class="hidden">
+      <p>You are the best thing that's ever happened to me. Here's to many more memories together! ❤️</p>
+      <img src="your-photo.jpg" alt="Us" class="photo">
+    </div>
+  </div>
+
+  <!-- Timeline Section -->
+  <div class="timeline">
+    <h2>Our Love Story 💕</h2>
+    <ul>
+      <li><strong>Insta Connection:</strong> It all started with a message on Instagram ✨</li>
+      <li><strong>September 15, 2024:</strong> Our first beautiful meet-up 💑</li>
+      <li><strong>After That:</strong> Our friendship blossomed into something magical 🌸</li>
+      <li><strong>24/7:</strong> Making you laugh, sharing smiles, building memories 📸</li>
+      <li><strong>The Silent Moments:</strong> Your eyes told me you love me without a word ❤️</li>
+    </ul>
+  </div>
+
+  <!-- Quiz Section -->
+  <div class="quiz">
+    <h2>How Well Do You Know Us? 💌</h2>
+    <div class="quiz-question">
+      <p><strong>1. Where did we first talk?</strong></p>
+      <label><input type="radio" name="q1"> WhatsApp</label>
+      <label><input type="radio" name="q1"> College</label>
+      <label><input type="radio" name="q1"> Instagram</label>
+    </div>
+    <div class="quiz-question">
+      <p><strong>2. What date was our first meet?</strong></p>
+      <label><input type="radio" name="q2"> August 20, 2024</label>
+      <label><input type="radio" name="q2"> September 15, 2024</label>
+      <label><input type="radio" name="q2"> October 7, 2024</label>
+    </div>
+    <div class="quiz-question">
+      <p><strong>3. What do I love the most about you?</strong></p>
+      <label><input type="radio" name="q3"> Your smile</label>
+      <label><input type="radio" name="q3"> Your laugh</label>
+      <label><input type="radio" name="q3"> Everything 💖</label>
+    </div>
+  </div>
+
+  <!-- Letter Section -->
+  <div class="letter">
+    <h2>A Letter from My Heart 💌</h2>
+    <div class="letter-content" id="love-letter">
+      <!-- Your handwritten love letter will appear here -->
+      <p><em>Coming soon... waiting for your letter 📝</em></p>
+    </div>
+  </div>
+
+  <!-- Candle & Wish Section -->
+  <div class="candle" onclick="revealWish()">
+    <div class="flame"></div>
+  </div>
+  <p class="wish-message" id="wish-message">Here's to forever together, my love! 💖</p>
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <img src="gallery1.jpg" alt="Memory 1">
+    <img src="gallery2.jpg" alt="Memory 2">
+    <img src="gallery3.jpg" alt="Memory 3">
+    <img src="gallery4.jpg" alt="Memory 4">
+    <img src="gallery5.jpg" alt="Memory 5">
+  </div>
+
+  <!-- Video Message Section -->
+  <div class="video-message">
+    <h2>Your Video Message 🎥</h2>
+    <video width="320" height="240" controls>
+      <source src="your-message.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Extras Section -->
+  <div class="extras">
+    <h2>Magical Extras ✨</h2>
+    <ul>
+      <li>🌟 Starry night animation is twinkling above...</li>
+      <li>🕯️ Blow the candle to reveal your wish</li>
+      <li>💬 Voice playback: "Play My Heartbeat ❤️"</li>
+    </ul>
+  </div>
+
+  <script>
+    // Starry night animation
+    const starryNight = document.querySelector(".starry-night");
+    for (let i = 0; i < 100; i++) { 
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+      star.style.animationDelay = `${Math.random() * 3}s`;
+      starryNight.appendChild(star);
+    }
+
+    // Reveal wish when candle is clicked
+    function revealWish() {
+      const wishMessage = document.getElementById("wish-message");
+      wishMessage.style.display = "block";
+    }
+  </script>
+</body>
+</html>
